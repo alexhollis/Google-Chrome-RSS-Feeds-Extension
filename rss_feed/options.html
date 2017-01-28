@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>My Test Extension Options</title>
+</head>
+<body>
+<script type="text/javascript" src="options.js"></script>
+RSS FEED URL:
+<select id="url">
+ <option value="google">Google News</option>
+ <option value="tc">Tech Crunch</option>
+ <option value="bbc">BBC News</option>
+ <option value="yahoo">Yahoo</option>
+ <option value="onion">The Onion</option>
+</select>
+
+<br />
+<label for="num_feeds">Number of feeds to display: </label>
+<input id="num_feeds" type="number" min="2" max="10" step="1" value="5" />
+<td>
+<input type="button" id="savebutton" value="Save Feed" />
+</td>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+ "manifest_version": 2,
+ "name": "RSS Feed Notification",
+  "version": "1.0",
+  "description": "Sends notifications when RSS feeds are updated",
+  "icons": {
+			"16":	"icon-16.png",
+			"48":	"icon-48.png",
+			"128": "icon-128.png"
+  },
+  "options_page": "options.html",
+  "browser_action": {
+  "default_icon": "icon-128.png",
+  "default_popup": "feed.html"
+  },
+  "content_scripts": [{
+		"js": ["options.js"],
+		"matches":	["https://www.google.com/*"],
+		"run_at":	"document_start"
+  }],
+  "background": {
+    
+      "matches": ["http://rss.slashdot.org/Slashdot/slashdot/*"],
+      "scripts": ["feed.js"]
+    
+  },
+
+    "permissions": [
+    "tabs",
+	"http://rss.slashdot.org/Slashdot/slashdot/*",
+	"https://*.google.com/*",
+	"storage"
+  ],
+  "content_security_policy": "script-src 'self' https://www.google.com; object-src 'self'"
+  
+}
+
